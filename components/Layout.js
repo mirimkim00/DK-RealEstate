@@ -6,10 +6,7 @@ export default function Layout(props) {
         <>
             <title>DK Real Estate Home</title>
             <MainNav />
-            <br />
-            <Container>
-                {props.children}
-            </Container>
+            {props.children}
             <br />
         </>
     )

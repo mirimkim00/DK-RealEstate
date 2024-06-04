@@ -6,7 +6,7 @@ import Image from 'react-bootstrap/Image';
 function MainNav() {
     return (
         <Navbar expand="lg">
-            <Container style={{ padding: '0 40px' }} fluid>
+            <Container fluid>
                 <Navbar.Brand href="#">
                     <Image
                         alt='DK Real Estate Management'
@@ -16,10 +16,7 @@ function MainNav() {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll" style={{ justifyContent: 'end' }}>
-                    <Nav
-                        className="mr-auto my-2 my-lg-0"
-                        style={{ maxHeight: '100px' }}
-                    >
+                    <Nav className="mr-auto my-2 my-lg-0">
                         <Nav.Link href="#">Owners</Nav.Link>
                         <Nav.Link href="#">Tenants</Nav.Link>
                         <Nav.Link href="#">Properties</Nav.Link>
