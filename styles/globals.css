@@ -24,3 +24,12 @@ section {
   margin-right: 40px;
   background-color: black;
 }
+
+/*footer*/
+a {
+  text-decoration: none; /* 밑줄제거 */
+  color: inherit; /* 링크 파란색 제거 */
+}
+a:hover {
+  color: darkgray;
+}
