@@ -1,6 +1,7 @@
 /* HERO */
 #hero {
   padding: 0;
+  cursor: pointer;
 }
 
 .heroItem img {
@@ -34,6 +35,7 @@
   font-size: 10px;
   letter-spacing: 3px;
   margin: 20px 0;
+  user-select: text;
 }
 
 /* swiper prev, next buttons */
