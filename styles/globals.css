@@ -15,3 +15,12 @@ section {
   margin-bottom: 100px;
   padding: 0 100px;
 }
+
+/*footer*/
+a {
+  text-decoration: none; /* 밑줄제거 */
+  color: inherit; /* 링크 파란색 제거 */
+}
+a:hover {
+  color: darkgray;
+}
