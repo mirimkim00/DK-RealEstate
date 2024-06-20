@@ -23,7 +23,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <>
+    <main>
       <section id={styles.hero}>
         <Swiper
           loop={true}
@@ -390,7 +390,6 @@ export default function Home() {
           </Col>
         </Row>
       </section>
-      <section id={styles.hero}></section>
-    </>
+    </main>
   );
 }

@@ -1,0 +1,27 @@
+/* FAQ */
+#faqOwners h1 {
+  font-weight: 600;
+  text-align: center;
+  margin: 50px 0;
+}
+
+.faqItems > * {
+  border: none;
+  --bs-accordion-border-color: transparent !important;
+}
+
+.faqHeader {
+  --bs-accordion-inner-border-radius: 0;
+}
+
+.faqHeader button {
+  background-color: #d9d9d9;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+@media screen and (max-width: 425px) {
+  .faqItemsSection {
+    padding: 0 40px;
+  }
+}
