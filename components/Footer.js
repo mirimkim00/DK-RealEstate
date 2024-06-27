@@ -1,5 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import Image from "next/image";
+import Link from "next/link";
+import { SiKakaotalk, SiTiktok } from "react-icons/si";
 import {
   FaFacebook,
   FaTwitter,
@@ -7,150 +10,126 @@ import {
   FaLinkedin,
   FaYoutube,
 } from "react-icons/fa";
-import { SiKakaotalk, SiTiktok } from "react-icons/si";
-import Image from "next/image";
-import Link from "next/link";
 
 export default function Footer() {
   return (
     <>
-      <footer
-        className="text-light pt-3 px-4"
-        style={{
-          backgroundColor: "#000000",
-          width: "100%",
-          paddingBottom: "4%",
-        }}
-      >
+      <footer className="text-light pt-3 px-4 footer">
         <Container>
           <Row>
-            <Col md={4}>
+            <Col md={3}>
               <Image
+                className="footer-logo"
                 src="/logo_w.png"
                 alt="Company Logo"
-                width={400}
-                height={400}
-                layout="intrinsic"
+                width={0}
+                height={0}
+                sizes="100vw"
+                // layout="intrinsic"
               />
-              <ul className="list-unstyled d-flex" style={{ marginLeft: "8%" }}>
-                <li className="mx-2">
+              <ul className="list-unstyled d-flex footer-social-icon-set">
+                <li className="footer-social-icon">
                   <a
                     href="https://www.facebook.com"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FaFacebook size={45} color="white" />
+                    <FaFacebook />
                   </a>
                 </li>
-                <li className="mx-2">
+                <li className="footer-social-icon">
                   <a
                     href="https://www.instagram.com"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FaInstagram size={45} color="white" />
+                    <FaInstagram />
                   </a>
                 </li>
-                <li className="mx-2">
+                <li className="footer-social-icon">
                   <a
                     href="https://www.youtube.com"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <FaYoutube size={45} color="white" />
+                    <FaYoutube />
                   </a>
                 </li>
-                <li className="mx-2">
+                <li className="footer-social-icon">
                   <a
                     href="https://www.tiktok.com"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <SiTiktok size={45} color="white" />
+                    <SiTiktok />
                   </a>
                 </li>
-                <li className="mx-2">
+                <li className="footer-social-icon">
                   <a
                     href="https://www.kakao.com"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <SiKakaotalk size={45} color="white" />
+                    <SiKakaotalk />
                   </a>
                 </li>
               </ul>
             </Col>
-            <Col
-              md={2}
-              className="d-flex flex-column align-items-left "
-              style={{ marginTop: "5%" }}
-            >
-              <h5
-                style={{
-                  fontWeight: "bold",
-                  fontSize: "27px",
-                  marginBottom: "17px",
-                }}
-              >
-                Management
-              </h5>
-              <ul className="list-unstyled" style={{ fontSize: "1.1em" }}>
-                <li className="mb-1">
-                  <Link href="#">Quick Free Quote</Link>
-                </li>
-                <li className="mb-1">
-                  <Link href="#">Leasing Q&A</Link>
-                </li>
-                <li className="mb-1">
-                  <Link href="#">Rent Q&A</Link>
-                </li>
-                <li className="mb-1">
-                  <Link href="#">Buildings</Link>
-                </li>
-              </ul>
+
+            <Col md={6} className="d-flex flex-wrap justify-content-between">
+              <Col md={6} className="footer-column">
+                {/* <div className="footer-column"> */}
+                <h5>Management</h5>
+                <ul className="list-unstyled">
+                  <li>
+                    <Link href="#">Quick Free Quote</Link>
+                  </li>
+                  <li>
+                    <Link href="#">Leasing Q&A</Link>
+                  </li>
+                  <li>
+                    <Link href="#">Rent Q&A</Link>
+                  </li>
+                  <li>
+                    <Link href="#">Buildings</Link>
+                  </li>
+                </ul>
+                {/* </div> */}
+              </Col>
+              <Col md={6} className="footer-column">
+                {/* <div className="footer-column"> */}
+                <h5>Menu</h5>
+                <ul className="list-unstyled">
+                  <li>
+                    <Link href="#">Owners</Link>
+                  </li>
+                  <li>
+                    <Link href="#">Tenants</Link>
+                  </li>
+                  <li>
+                    <Link href="#">Properties</Link>
+                  </li>
+                  <li>
+                    <Link href="#">New Development</Link>
+                  </li>
+                  <li>
+                    <Link href="#">Plans</Link>
+                  </li>
+                  <li>
+                    <Link href="#">Contact</Link>
+                  </li>
+                </ul>
+                {/* </div> */}
+              </Col>
             </Col>
-            <Col
-              md={2}
-              className="d-flex flex-column align-items-left mx-1"
-              style={{ marginTop: "5%", paddingLeft: "5.5%" }}
-            >
-              <h5
-                style={{
-                  fontWeight: "bold",
-                  fontSize: "27px",
-                  marginBottom: "17px",
-                }}
-              >
-                Menu
-              </h5>
-              <ul className="list-unstyled" style={{ fontSize: "1.1em" }}>
-                <li className="mb-1">
-                  <Link href="#">Owners</Link>
-                </li>
-                <li className="mb-1">
-                  <Link href="#">Tenants</Link>
-                </li>
-                <li className="mb-1">
-                  <Link href="#">Properties</Link>
-                </li>
-                <li className="mb-1">
-                  <Link href="#">New Development</Link>
-                </li>
-                <li className="mb-1">
-                  <Link href="#">Plans</Link>
-                </li>
-                <li className="mb-1">
-                  <Link href="#">Contact</Link>
-                </li>
-              </ul>
-            </Col>
-            <Col md={3} style={{ marginTop: "70px", paddingLeft: "6%" }}>
+
+            <Col md={3} className="temp-footer-image">
               <Image
                 src="/blank_l.jpg"
                 alt="Blank"
-                width={310}
-                height={210}
-                // layout="intrinsic"
+                layout="responsive"
+                width={100}
+                height={50}
               />
             </Col>
           </Row>

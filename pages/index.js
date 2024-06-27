@@ -1,4 +1,9 @@
 import styles from "../styles/Home.module.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import { MdKeyboardArrowRight } from "react-icons/md";
 import { Button, Form, Carousel, Row, Col, Container } from "react-bootstrap";
 import Image from "next/image";
@@ -18,16 +23,24 @@ import React from "react";
 
 export default function Home() {
   return (
-    <>
+    <main>
       <section id={styles.hero}>
-        <Carousel
-          className={styles.heroCarousel}
-          prevIcon={false}
-          nextIcon={false}
+        <Swiper
+          loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          navigation={true}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Autoplay, Pagination, Navigation]}
+          className={styles.heroSwiper}
         >
-          <Carousel.Item className={styles.heroItem}>
+          <SwiperSlide className={styles.heroItem}>
             <Image alt="" src={img1} />
-            <Carousel.Caption className={styles.heroCaption}>
+            <div className={styles.heroLabel}>
               <h1>First slide label</h1>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -37,11 +50,11 @@ export default function Home() {
                 LEARN MORE
                 <MdKeyboardArrowRight size={15} />
               </Button>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item className={styles.heroItem}>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className={styles.heroItem}>
             <Image alt="" src={img2} />
-            <Carousel.Caption className={styles.heroCaption}>
+            <div className={styles.heroLabel}>
               <h1>Second slide label</h1>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -51,11 +64,11 @@ export default function Home() {
                 LEARN MORE
                 <MdKeyboardArrowRight size={15} />
               </Button>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item className={styles.heroItem}>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className={styles.heroItem}>
             <Image alt="" src={img3} />
-            <Carousel.Caption className={styles.heroCaption}>
+            <div className={styles.heroLabel}>
               <h1>Third slide label</h1>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -65,11 +78,11 @@ export default function Home() {
                 LEARN MORE
                 <MdKeyboardArrowRight size={15} />
               </Button>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item className={styles.heroItem}>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className={styles.heroItem}>
             <Image alt="" src={img4} />
-            <Carousel.Caption className={styles.heroCaption}>
+            <div className={styles.heroLabel}>
               <h1>Fourth slide label</h1>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -79,9 +92,9 @@ export default function Home() {
                 LEARN MORE
                 <MdKeyboardArrowRight size={15} />
               </Button>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </section>
 
       <section id={styles.info}>
@@ -96,156 +109,103 @@ export default function Home() {
         </p>
       </section>
 
-      <section>
-        <div id={styles.partners}>
-          <Carousel
-            className={styles.partnersCarousel}
-            prevIcon={false}
-            nextIcon={false}
-          >
-            <Carousel.Item className={styles.partnersItem}>
-              <div>
-                <Row className="gx-5" style={{ height: "300px" }}>
-                  <Col>
-                    <Image
-                      src={img1}
-                      alt="First slide"
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                  </Col>
-                  <Col className={styles.partnersCaption}>
-                    <h3>Partner 1</h3>
-                    <p>
-                      Nulla vitae elit libero, a pharetra augue mollis interdum.
-                    </p>
-                  </Col>
-                </Row>
-              </div>
-            </Carousel.Item>
-            <Carousel.Item className={styles.partnersItem}>
-              <div>
-                <Row className="gx-5" style={{ height: "300px" }}>
-                  <Col>
-                    <Image
-                      src={img2}
-                      alt="First slide"
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                  </Col>
-                  <Col className={styles.partnersCaption}>
-                    <h3>Partner 2</h3>
-                    <p>
-                      Nulla vitae elit libero, a pharetra augue mollis interdum.
-                    </p>
-                  </Col>
-                </Row>
-              </div>
-            </Carousel.Item>
-            <Carousel.Item className={styles.partnersItem}>
-              <div>
-                <Row className="gx-5" style={{ height: "300px" }}>
-                  <Col>
-                    <Image
-                      src={img3}
-                      alt="First slide"
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                  </Col>
-                  <Col className={styles.partnersCaption}>
-                    <h3>Partner 3</h3>
-                    <p>
-                      Nulla vitae elit libero, a pharetra augue mollis interdum.
-                    </p>
-                  </Col>
-                </Row>
-              </div>
-            </Carousel.Item>
-            <Carousel.Item className={styles.partnersItem}>
-              <div>
-                <Row className="gx-5" style={{ height: "300px" }}>
-                  <Col>
-                    <Image
-                      src={img4}
-                      alt="First slide"
-                      layout="fill"
-                      objectFit="cover"
-                    />
-                  </Col>
-                  <Col className={styles.partnersCaption}>
-                    <h3>Partner 4</h3>
-                    <p>
-                      Nulla vitae elit libero, a pharetra augue mollis interdum.
-                    </p>
-                  </Col>
-                </Row>
-              </div>
-            </Carousel.Item>
-          </Carousel>
-        </div>
+      <section id={styles.partners}>
+        <Swiper
+          loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          navigation={true}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Autoplay, Pagination, Navigation]}
+          className={styles.partnersSwiper}
+        >
+          <SwiperSlide className={styles.partnersItem}>
+            <Image src={img1} alt="First slide" />
+            <div className={styles.partnersLabel}>
+              <h3>Partner 1</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className={styles.partnersItem}>
+            <Image src={img2} alt="Second slide" />
+            <div className={styles.partnersLabel}>
+              <h3>Partner 2</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className={styles.partnersItem}>
+            <Image src={img3} alt="Third slide" />
+            <div className={styles.partnersLabel}>
+              <h3>Partner 3</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className={styles.partnersItem}>
+            <Image src={img4} alt="Fourth slide" />
+            <div className={styles.partnersLabel}>
+              <h3>Partner 4</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </section>
 
-      <section
-        style={{
-          backgroundColor: "#C4C4C4",
-          width: "100%",
-          paddingBottom: "5%",
-        }}
-      >
-        <div
-          style={{
-            paddingTop: "6%",
-            paddingBottom: "4%",
-            textAlign: "center",
-          }}
-        >
-          <h3 style={{ fontWeight: "bold" }}>
-            Nec feugiat in fermentum posuere
-          </h3>
+      <section className={styles.section}>
+        <div className={styles.sectionHeader}>
+          <h3>Nec feugiat in fermentum posuere</h3>
         </div>
 
         <Row>
-          <Col md={6} style={{ paddingLeft: "10%", paddingRight: "5%" }}>
-            <h5 style={{ fontWeight: "bold" }}>Personal Information</h5>
+          <Col md={6} className={styles.formSection}>
+            <h5>Personal Information</h5>
 
             <Form>
-              <Form.Group controlId="formName" className="mt-3">
+              <Form.Group controlId="formName" className={styles.formGroup}>
                 <Form.Label>Your Name *</Form.Label>
                 <Form.Control type="text" placeholder="John Doe" />
               </Form.Group>
 
-              <Form.Group controlId="formEmail" className="mt-2">
+              <Form.Group controlId="formEmail" className={styles.formGroup}>
                 <Form.Label>Email Address *</Form.Label>
                 <Form.Control type="email" placeholder="info@address.com" />
               </Form.Group>
 
-              <Form.Group controlId="formPhone" className="mt-2">
+              <Form.Group controlId="formPhone" className={styles.formGroup}>
                 <Form.Label>Phone *</Form.Label>
                 <Form.Control type="text" placeholder="000-000-000" />
               </Form.Group>
 
-              <Form.Group controlId="formAdditionalComment" className="mt-2">
+              <Form.Group
+                controlId="formAdditionalComment"
+                className={styles.formGroup}
+              >
                 <Form.Label>Additional Comment</Form.Label>
                 <Form.Control
                   as="textarea"
-                  rows={11}
+                  // rows={10}
                   placeholder="Do you have any question or comment?"
+                  className={styles.fixedSizeTextarea} // 여기에 클래스 추가
                 />
               </Form.Group>
             </Form>
           </Col>
-          {/* <Col md={2}></Col> */}
-          <Col md={6} style={{ paddingLeft: "5%", paddingRight: "10%" }}>
-            <h5 style={{ fontWeight: "bold" }}>Property Information</h5>
+
+          <Col md={6} className={styles.formSection}>
+            <h5>Property Information</h5>
             <Form>
-              <Form.Group controlId="formPropertyAddress" className="mt-3">
+              <Form.Group
+                controlId="formPropertyAddress"
+                className={styles.formGroup}
+              >
                 <Form.Label>Property Address *</Form.Label>
                 <Form.Control type="text" placeholder="Property Address" />
               </Form.Group>
 
-              <Form.Group controlId="formBedroom" className="mt-2">
+              <Form.Group controlId="formBedroom" className={styles.formGroup}>
                 <Form.Label>Bedroom *</Form.Label>
                 <Form.Select defaultValue="Studio">
                   <option>Studio</option>
@@ -254,7 +214,7 @@ export default function Home() {
                 </Form.Select>
               </Form.Group>
 
-              <Form.Group controlId="formBathroom" className="mt-2">
+              <Form.Group controlId="formBathroom" className={styles.formGroup}>
                 <Form.Label>Bathroom *</Form.Label>
                 <Form.Select defaultValue="1">
                   <option>1</option>
@@ -263,7 +223,7 @@ export default function Home() {
                 </Form.Select>
               </Form.Group>
 
-              <Form.Group controlId="formParking" className="mt-2">
+              <Form.Group controlId="formParking" className={styles.formGroup}>
                 <Form.Label>Parking *</Form.Label>
                 <Form.Select defaultValue="Parking">
                   <option>Parking</option>
@@ -272,7 +232,7 @@ export default function Home() {
                 </Form.Select>
               </Form.Group>
 
-              <Form.Group controlId="formLocker" className="mt-2">
+              <Form.Group controlId="formLocker" className={styles.formGroup}>
                 <Form.Label>Locker *</Form.Label>
                 <Form.Select defaultValue="Locker">
                   <option>Locker</option>
@@ -281,7 +241,7 @@ export default function Home() {
                 </Form.Select>
               </Form.Group>
 
-              <Form.Group controlId="formBalcony" className="mt-2">
+              <Form.Group controlId="formBalcony" className={styles.formGroup}>
                 <Form.Label>Balcony *</Form.Label>
                 <Form.Select defaultValue="Balcony">
                   <option>Balcony</option>
@@ -290,7 +250,10 @@ export default function Home() {
                 </Form.Select>
               </Form.Group>
 
-              <Form.Group controlId="formFurnished" className="mt-2">
+              <Form.Group
+                controlId="formFurnished"
+                className={styles.formGroup}
+              >
                 <Form.Label>Furnished *</Form.Label>
                 <Form.Select defaultValue="Furnished">
                   <option>Furnished</option>
@@ -301,27 +264,11 @@ export default function Home() {
             </Form>
           </Col>
 
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              paddingLeft: "20%",
-              paddingRight: "20%",
-            }}
-          >
+          <div className={styles.submitButtonContainer}>
             <Button
               variant="dark"
               type="submit"
-              className="mt-5"
-              style={{
-                fontSize: "0.6em",
-                letterSpacing: "0.1em",
-                paddingTop: "2%",
-                paddingBottom: "2%",
-                paddingLeft: "4%",
-                paddingRight: "4%",
-              }}
+              className={styles.submitButton}
             >
               SUBMIT &gt;
             </Button>
@@ -329,79 +276,100 @@ export default function Home() {
         </Row>
       </section>
 
-      <section style={{ marginTop: "2%" }}>
+      <section className={styles.chartSection}>
         <Row>
           <Col
             md={12}
             className="d-flex flex-column justify-content-center align-items-center "
           >
-            <h3 style={{ fontWeight: "bold" }}>
-              Pretium vulputate sapien nec sagittis aliquam
-            </h3>
+            <h3>Pretium vulputate sapien nec sagittis aliquam</h3>
             <br />
             <Image
+              className="chartSection-lmg"
               src="/blank_l.jpg"
               alt="Blank"
-              width={1000}
-              height={500}
-              layout="intrinsic"
+              layout="responsive"
+              width={300}
+              height={100}
+              // sizes="100vw"
+              // layout="intrinsic"
             />
           </Col>
         </Row>
       </section>
 
-      <section
-        style={{
-          paddingLeft: "10%",
-          paddingRight: "10%",
-          marginBottom: "-6%",
-        }}
-      >
+      <section className={styles.getInTouchSection}>
         <Row>
           <Col
             md={6}
-            style={{
-              paddingTop: "5%",
-              paddingLeft: "5%",
-            }}
+            // style={{
+            //   paddingTop: "2%",
+            //   paddingLeft: "0%",
+            // }}
           >
-            <h3 style={{ fontWeight: "bold" }}>Get In Touch</h3>
+            <h3>Get In Touch</h3>
             <br />
-            <p style={{ marginRight: "4%" }}>
+            <p>
               Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit
               aut fugit, sed quia consequuntur magni dolores eos qui ratione
               voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem.
             </p>
-            <ul
-              className="list-unstyled d-flex mt-5"
-              style={{ justifyContent: "left" }}
-            >
+            <ul className="list-unstyled d-flex">
               <li className="mx-2">
-                <Image src="/blank_s.jpg" alt="Blank" width={80} height={80} />
+                <Image
+                  // className="getInTouch-sm-lmg"
+                  src="/blank_s.jpg"
+                  alt="Blank"
+                  layout="responsive"
+                  width={50}
+                  height={50}
+                />
               </li>
               <li className="mx-2">
-                <Image src="/blank_s.jpg" alt="Blank" width={80} height={80} />
+                <Image
+                  // className="getInTouch-sm-lmg"
+                  src="/blank_s.jpg"
+                  alt="Blank"
+                  layout="responsive"
+                  width={50}
+                  height={50}
+                />
               </li>
               <li className="mx-2">
-                <Image src="/blank_s.jpg" alt="Blank" width={80} height={80} />
+                <Image
+                  className="getInTouch-sm-lmg"
+                  src="/blank_s.jpg"
+                  alt="Blank"
+                  layout="responsive"
+                  width={50}
+                  height={50}
+                />
               </li>
               <li className="mx-2">
-                <Image src="/blank_s.jpg" alt="Blank" width={80} height={80} />
+                <Image
+                  className="getInTouch-sm-lmg"
+                  src="/blank_s.jpg"
+                  alt="Blank"
+                  layout="responsive"
+                  width={50}
+                  height={50}
+                />
               </li>
             </ul>
           </Col>
           <Col md={6}>
             <Image
+              className="getInTouch-lg-lmg"
               src="/blank_l.jpg"
               alt="Blank"
-              width={500}
-              height={350}
-              //layout="intrinsic"
+              layout="responsive"
+              width={300}
+              height={100}
+              // sizes="100vw"
             />
           </Col>
         </Row>
       </section>
-      <section id={styles.hero}></section>
-    </>
+    </main>
   );
 }
