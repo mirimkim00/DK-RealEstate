@@ -1,6 +1,5 @@
 import Footer from "./Footer";
 import MainNav from "./MainNav";
-import { Container } from "react-bootstrap";
 
 export default function Layout(props) {
   return (

@@ -23,7 +23,7 @@ import React from "react";
 
 export default function Home() {
   return (
-    <>
+    <main>
       <section id={styles.hero}>
         <Swiper
           loop={true}
@@ -120,78 +120,60 @@ export default function Home() {
         </p>
       </section>
 
-      <section>
-        <div id={styles.partners}>
-          <Swiper
-            loop={true}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            navigation={true}
-            pagination={{
-              clickable: true,
-            }}
-            modules={[Autoplay, Pagination, Navigation]}
-            className={styles.partnersSwiper}>
-            <SwiperSlide className={styles.partnersItem}>
-              <Row className="gx-5" style={{ height: '300px' }}>
-                <Col>
-                  <Image
-                    src={img1}
-                    alt="First slide"
-                  />
-                </Col>
-                <Col className={styles.partnersLabel}>
-                  <h3>Partner 1</h3>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Col>
-              </Row>
-            </SwiperSlide>
-            <SwiperSlide className={styles.partnersItem}>
-              <Row className="gx-5" style={{ height: '300px' }}>
-                <Col>
-                  <Image
-                    src={img2}
-                    alt="Second slide"
-                  />
-                </Col>
-                <Col className={styles.partnersLabel}>
-                  <h3>Partner 2</h3>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Col>
-              </Row>
-            </SwiperSlide>
-            <SwiperSlide className={styles.partnersItem}>
-              <Row className="gx-5" style={{ height: '300px' }}>
-                <Col>
-                  <Image
-                    src={img3}
-                    alt="Third slide"
-                  />
-                </Col>
-                <Col className={styles.partnersLabel}>
-                  <h3>Partner 3</h3>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Col>
-              </Row>
-            </SwiperSlide>
-            <SwiperSlide className={styles.partnersItem}>
-              <Row className="gx-5" style={{ height: '300px' }}>
-                <Col>
-                  <Image
-                    src={img4}
-                    alt="Fourth slide"
-                  />
-                </Col>
-                <Col className={styles.partnersLabel}>
-                  <h3>Partner 4</h3>
-                  <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                </Col>
-              </Row>
-            </SwiperSlide>
-          </Swiper>
-        </div>
+      <section id={styles.partners}>
+        <Swiper
+          loop={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          navigation={true}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Autoplay, Pagination, Navigation]}
+          className={styles.partnersSwiper}>
+          <SwiperSlide className={styles.partnersItem}>
+            <Image
+              src={img1}
+              alt="First slide"
+            />
+            <div className={styles.partnersLabel}>
+              <h3>Partner 1</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className={styles.partnersItem}>
+            <Image
+              src={img2}
+              alt="Second slide"
+            />
+            <div className={styles.partnersLabel}>
+              <h3>Partner 2</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className={styles.partnersItem}>
+            <Image
+              src={img3}
+              alt="Third slide"
+            />
+            <div className={styles.partnersLabel}>
+              <h3>Partner 3</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide className={styles.partnersItem}>
+            <Image
+              src={img4}
+              alt="Fourth slide"
+            />
+            <div className={styles.partnersLabel}>
+              <h3>Partner 4</h3>
+              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </section>
 
       <section
@@ -403,12 +385,11 @@ export default function Home() {
               alt="Blank"
               width={500}
               height={350}
-              //layout="intrinsic"
+            //layout="intrinsic"
             />
           </Col>
         </Row>
       </section>
-      <section id={styles.hero}></section>
-    </>
+    </main>
   );
 }
