@@ -4,7 +4,6 @@ import "swiper/css";
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
-import { MdKeyboardArrowRight } from "react-icons/md";
 import { Button, Form, Carousel, Row, Col, Container } from "react-bootstrap";
 import Image from "next/image";
 import img1 from "../src/images/1.jpg";
@@ -22,6 +21,41 @@ import React from "react";
 // import { SiKakaotalk, SiTiktok } from "react-icons/si";
 
 export default function Home() {
+  const logos = [
+    img1,
+    img2,
+    img3,
+    img4,
+  ];
+
+  const heroSlides = [
+    {
+      img: img1,
+      title: "First slide label",
+      description:
+        "Eros et tempus purus venenatis sollicitudin at scelerisque at a. Pharetra turpis aliquet vestibulum urna. Pellentesque nisi aliquam lectus sed ipsum et. Ridiculus platea luctus vestibulum sem quis. Lorem quis ut venenatis vel tincidunt congue.",
+    },
+    {
+      img: img2,
+      title: "Second slide label",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
+    {
+      img: img3,
+      title: "Third slide label",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    },
+    {
+      img: img4,
+      title: "Fourth slide label",
+      description:
+        "",
+    },
+  ];
+
+
   return (
     <main>
       <section id={styles.hero}>
@@ -32,84 +66,27 @@ export default function Home() {
             disableOnInteraction: false,
           }}
           navigation={true}
-          pagination={{
-            clickable: true,
-          }}
           modules={[Autoplay, Pagination, Navigation]}
           className={styles.heroSwiper}>
-          <SwiperSlide className={styles.heroItem}>
-            <Image
-              alt=''
-              src={img1}
-            />
-            <div className={styles.heroLabel}>
-              <h1>First slide label</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Button variant="dark" className={styles.heroBtn}>
-                LEARN MORE
-                <MdKeyboardArrowRight size={15} />
-              </Button>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className={styles.heroItem}>
-            <Image
-              alt=''
-              src={img2}
-            />
-            <div className={styles.heroLabel}>
-              <h1>Second slide label</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Button variant="dark" className={styles.heroBtn}>
-                LEARN MORE
-                <MdKeyboardArrowRight size={15} />
-              </Button>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className={styles.heroItem}>
-            <Image
-              alt=''
-              src={img3}
-            />
-            <div className={styles.heroLabel}>
-              <h1>Third slide label</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Button variant="dark" className={styles.heroBtn}>
-                LEARN MORE
-                <MdKeyboardArrowRight size={15} />
-              </Button>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className={styles.heroItem}>
-            <Image
-              alt=''
-              src={img4}
-            />
-            <div className={styles.heroLabel}>
-              <h1>Fourth slide label</h1>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-              <Button variant="dark" className={styles.heroBtn}>
-                LEARN MORE
-                <MdKeyboardArrowRight size={15} />
-              </Button>
-            </div>
-          </SwiperSlide>
+
+          {/* 내용 정해지면 map 해체 */}
+          {heroSlides.map((slide, index) => (
+            <SwiperSlide key={index} className={styles.heroItem}>
+              <Image alt="" src={slide.img} />
+              <div className={styles.heroLabel}>
+                <h1>{slide.title}</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <Button variant="dark" className={styles.heroBtn}>
+                  Learn more
+                </Button>
+              </div>
+            </SwiperSlide>
+          ))}
         </Swiper>
       </section>
 
       <section id={styles.info}>
-        <h3>Pretium vulputate sapien nec sagittis aliquam</h3>
+        <h3>DK Real Estate Management</h3>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Adipiscing
@@ -122,57 +99,30 @@ export default function Home() {
 
       <section id={styles.partners}>
         <Swiper
+          slidesPerView={3}
+          spaceBetween={-50}
           loop={true}
+          navigation={true}
+          modules={[Autoplay, Pagination, Navigation]}
+
           autoplay={{
             delay: 2500,
             disableOnInteraction: false,
           }}
-          navigation={true}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Autoplay, Pagination, Navigation]}
           className={styles.partnersSwiper}>
-          <SwiperSlide className={styles.partnersItem}>
-            <Image
-              src={img1}
-              alt="First slide"
-            />
-            <div className={styles.partnersLabel}>
-              <h3>Partner 1</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className={styles.partnersItem}>
-            <Image
-              src={img2}
-              alt="Second slide"
-            />
-            <div className={styles.partnersLabel}>
-              <h3>Partner 2</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className={styles.partnersItem}>
-            <Image
-              src={img3}
-              alt="Third slide"
-            />
-            <div className={styles.partnersLabel}>
-              <h3>Partner 3</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide className={styles.partnersItem}>
-            <Image
-              src={img4}
-              alt="Fourth slide"
-            />
-            <div className={styles.partnersLabel}>
-              <h3>Partner 4</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            </div>
-          </SwiperSlide>
+          {logos.map((logo, index) => (
+            <SwiperSlide key={index}
+              style={{ display: 'flex', justifyContent: 'center', paddingLeft: '10px' }}
+            >
+              <Image
+                src={logo}
+                alt={`Partner ${index}`}
+                style={{
+                  width: "340px", height: "50px", objectFit: "cover"
+                }}
+              />
+            </SwiperSlide>
+          ))}
         </Swiper>
       </section>
 

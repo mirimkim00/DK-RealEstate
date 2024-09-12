@@ -11,7 +11,7 @@ function MainNav() {
                     <Image
                         alt='DK Real Estate Management'
                         src="/logo.png"
-                        width={'200px'}
+                        width={'250px'}
                     />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbarScroll" />
