@@ -20,6 +20,10 @@
   right: 0;
 }
 
+.faqSection {
+  font-family: "Merriweather", serif;
+}
+
 /* FAQ */
 .faqMain {
   justify-content: space-between;
@@ -28,6 +32,7 @@
 /* FAQ - sidebar */
 .sidebar {
   margin-bottom: 100px;
+  font-family: "Inter", sans-serif;
 }
 
 .sidebar button {
@@ -50,6 +55,10 @@
 }
 
 /* FAQ - contact info */
+.contactInfo {
+  font-family: "Inter", sans-serif;
+}
+
 .contactInfo div {
   width: 80%;
   display: flex;
@@ -69,7 +78,6 @@
 
 /* FAQ - faq */
 .faq {
-  border-bottom: 1px solid #000;
   margin-bottom: 30px;
 }
 
@@ -78,19 +86,40 @@
   font-weight: 600;
 }
 
-.faqItems > * {
+.faqItems button:not(.collapsed) {
+  background-color: #fff;
+}
+
+/* .accordion-item */
+.faqItems div {
   border: none;
-  --bs-accordion-border-color: transparent !important;
+}
+
+.faqItems div:first-of-type,
+.faqItems div:last-of-type {
+  border-radius: 0px;
+}
+
+.faqItems div button {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.faqItems div button:not(.collapsed) {
+  color: black;
+}
+
+.faqItems div button:active {
+  color: black;
+}
+
+.faqItems div button:focus {
+  box-shadow: none;
+  border-color: rgba(0, 0, 0, 0.125);
 }
 
 .question {
-  --bs-accordion-inner-border-radius: 0;
-}
-
-.question button {
-  background-color: #d9d9d9;
-  margin-bottom: 20px;
-  font-weight: 500;
+  border-bottom: #dee2e6 solid 1px;
 }
 
 @media screen and (max-width: 1024px) {

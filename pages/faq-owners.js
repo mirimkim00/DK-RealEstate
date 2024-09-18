@@ -8,6 +8,16 @@ import Image from 'next/image';
 import { Col, Row } from 'react-bootstrap';
 
 export default function FaqOwners() {
+    const accordionData = [
+        { key: 1 },
+        { key: 2 },
+        { key: 3 },
+        { key: 4 },
+        { key: 5 },
+        { key: 6 },
+        { key: 7 },
+    ];
+
     return (
         <main id={styles.faqOwners}>
             <div className={styles.hero}>
@@ -26,19 +36,19 @@ export default function FaqOwners() {
                         <div className={styles.sidebar}>
                             <button>
                                 <FaLongArrowAltRight />
-                                &nbsp; FREE ESTIMATE
+                                &nbsp; Free Estimate
                             </button>
                             <button>
                                 <FaLongArrowAltRight />
-                                &nbsp; NON-RESIDENT TAXES
+                                &nbsp; Non-Resident Taxes
                             </button>
                             <button>
                                 <FaLongArrowAltRight />
-                                &nbsp; PLANS
+                                &nbsp; Plans
                             </button>
                             <button>
                                 <FaLongArrowAltRight />
-                                &nbsp; OWNERS PORTAL
+                                &nbsp; Owners Portal
                             </button>
                         </div>
 
@@ -67,81 +77,23 @@ export default function FaqOwners() {
                     </Col>
                     <Col>
                         <div className={styles.faq}>
-                            <h1>OWNERS FAQs</h1>
+                            <h1>Frequently Asked Questions</h1>
                         </div>
                         <Accordion className={styles.faqItems}>
-                            <Accordion.Item eventKey="0">
-                                <Accordion.Header className={styles.question}>Accordion Item #1</Accordion.Header>
-                                <Accordion.Body>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                    culpa qui officia deserunt mollit anim id est laborum.
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            <Accordion.Item eventKey="1">
-                                <Accordion.Header className={styles.question}>Accordion Item #2</Accordion.Header>
-                                <Accordion.Body>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                    culpa qui officia deserunt mollit anim id est laborum.
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            <Accordion.Item eventKey="2">
-                                <Accordion.Header className={styles.question}>Accordion Item #2</Accordion.Header>
-                                <Accordion.Body>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                    culpa qui officia deserunt mollit anim id est laborum.
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            <Accordion.Item eventKey="3">
-                                <Accordion.Header className={styles.question}>Accordion Item #3</Accordion.Header>
-                                <Accordion.Body>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                    culpa qui officia deserunt mollit anim id est laborum.
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            <Accordion.Item eventKey="4">
-                                <Accordion.Header className={styles.question}>Accordion Item #4</Accordion.Header>
-                                <Accordion.Body>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                    culpa qui officia deserunt mollit anim id est laborum.
-                                </Accordion.Body>
-                            </Accordion.Item>
-                            <Accordion.Item eventKey="5">
-                                <Accordion.Header className={styles.question}>Accordion Item #5</Accordion.Header>
-                                <Accordion.Body>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                                    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                                    minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                                    aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                    culpa qui officia deserunt mollit anim id est laborum.
-                                </Accordion.Body>
-                            </Accordion.Item>
+                            {accordionData.map((item) => (
+                                <Accordion.Item eventKey={item.key} key={item.key}>
+                                    <Accordion.Header className={styles.question}>Accordion Item #{item.key}</Accordion.Header>
+                                    <Accordion.Body>
+                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+                                        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                                        aliquip ex ea commodo consequat. Duis aute irure dolor in
+                                        reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                                        pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                        culpa qui officia deserunt mollit anim id est laborum.
+                                    </Accordion.Body>
+                                </Accordion.Item>
+                            ))}
                         </Accordion>
                     </Col>
                 </Row>
