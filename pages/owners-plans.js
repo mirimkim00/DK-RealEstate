@@ -2,7 +2,7 @@ import styles from '../styles/OwnersPlans.module.css';
 import menuPagePhoto from '../src/images/Menu_Page_Photo.jpg'
 import Image from 'next/image';
 import { Col, Row, Card, Button } from 'react-bootstrap';
-import SideBar from '@/components/SideBar';
+import OwnersSideBar from '@/components/OwnersSideBar';
 import { BsCheck } from "react-icons/bs";
 
 export default function OwnersPlans() {
@@ -21,7 +21,7 @@ export default function OwnersPlans() {
 
             <section className={styles.plansSection}>
                 <Row className={styles.plansMain}>
-                    <SideBar />
+                    <OwnersSideBar />
                     <Col>
                         <div className={styles.plans}>
                             <h1>Plans</h1>
