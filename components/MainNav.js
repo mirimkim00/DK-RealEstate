@@ -20,7 +20,7 @@ function MainNav() {
                         <Nav.Link href="faq-owners">Owners</Nav.Link>
                         <Nav.Link href="tenants-plans">Tenants</Nav.Link>
                         <Nav.Link href="#">Properties</Nav.Link>
-                        <Nav.Link href="#">New Development</Nav.Link>
+                        <Nav.Link href="new-development">New Development</Nav.Link>
                         <Nav.Link href="#">Plans</Nav.Link>
                         <Nav.Link href="#">Contact</Nav.Link>
                     </Nav>

@@ -3,7 +3,7 @@ import Accordion from 'react-bootstrap/Accordion';
 import menuPagePhoto from '../src/images/Menu_Page_Photo.jpg'
 import Image from 'next/image';
 import { Col, Row } from 'react-bootstrap';
-import SideBar from '@/components/SideBar';
+import OwnersSideBar from '@/components/OwnersSideBar';
 
 export default function FaqOwners() {
     const accordionData = [
@@ -30,7 +30,7 @@ export default function FaqOwners() {
 
             <section className={styles.faqSection}>
                 <Row className={styles.faqMain}>
-                    <SideBar />
+                    <OwnersSideBar />
                     <Col>
                         <div className={styles.faq}>
                             <h1>Frequently Asked Questions</h1>

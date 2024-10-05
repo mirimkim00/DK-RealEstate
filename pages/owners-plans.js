@@ -7,6 +7,7 @@ import { BsCheck } from "react-icons/bs";
 
 export default function OwnersPlans() {
     const cardData = [1, 2, 3];
+
     return (
         <main id={styles.plans}>
             <div className={styles.hero}>

@@ -112,7 +112,11 @@ export default function Home() {
           className={styles.partnersSwiper}>
           {logos.map((logo, index) => (
             <SwiperSlide key={index}
-              style={{ display: 'flex', justifyContent: 'center', paddingLeft: '10px' }}
+              style={{
+                // display: 'flex',
+                justifyContent: 'center',
+                paddingLeft: '10px'
+              }}
             >
               <Image
                 src={logo}
@@ -124,7 +128,7 @@ export default function Home() {
             </SwiperSlide>
           ))}
         </Swiper>
-      </section>
+      </section >
 
       <section
         style={{
@@ -340,6 +344,6 @@ export default function Home() {
           </Col>
         </Row>
       </section>
-    </main>
+    </main >
   );
 }
