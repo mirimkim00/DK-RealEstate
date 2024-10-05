@@ -6,7 +6,8 @@
 
 .heroItem img {
   width: 100%;
-  height: auto;
+  height: 893px;
+  object-fit: cover;
 }
 
 .heroLabel {
@@ -24,16 +25,15 @@
 
 .heroLabel > p {
   width: 50%;
-  font-size: 32px;
-  line-height: 2rem;
+  font-size: 18px;
+  line-height: 160%;
 }
 
 .heroBtn {
-  width: 160px;
+  width: 275px;
   height: 50px;
-  font-weight: bold;
-  font-size: 10px;
-  letter-spacing: 3px;
+  font-size: 17px;
+  letter-spacing: 1px;
   margin: 20px 0;
   user-select: text;
 }
@@ -43,21 +43,12 @@
 .heroSwiper > div:nth-child(3) {
   color: black;
   padding: 0 50px;
+}
+
+.heroSwiper > div:nth-child(2)::after,
+.heroSwiper > div:nth-child(3)::after {
+  font-size: 25px;
   font-weight: bold;
-}
-
-/* swiper pagination */
-.heroSwiper > div:nth-child(4) {
-  width: auto;
-  height: auto;
-  margin: 0 150px 350px 150px;
-}
-
-.heroSwiper > div:nth-child(4) > span {
-  width: 20px;
-  height: 20px;
-  margin-right: 20px !important;
-  background-color: black;
 }
 
 /* INFORMATION */
@@ -74,69 +65,21 @@
 }
 
 /* PARTNERS */
-.partnersItem {
-  overflow: hidden;
-}
-
-.partnersSwiper > div:first-child {
-  padding-bottom: 40px;
-  align-items: center;
-}
-
-.partnersItem {
-  display: flex !important;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-}
-.partnersItem img {
-  width: 50%;
-  height: auto;
-  padding: 30px;
-}
-
-.partnersLabel {
-  padding: 30px;
-}
-
 /* swiper prev, next buttons */
 .partnersSwiper > div:nth-child(2),
 .partnersSwiper > div:nth-child(3) {
   color: black;
-  padding: 0 50px;
+}
+
+.partnersSwiper > div:nth-child(2)::after,
+.partnersSwiper > div:nth-child(3)::after {
+  font-size: 25px;
   font-weight: bold;
 }
 
-/* swiper pagination */
-.partnersSwiper > div:nth-child(4) {
-  bottom: 0;
-}
-
-.partnersSwiper > div:nth-child(4) > span {
-  width: 20px;
-  height: 20px;
-  margin-right: 20px !important;
-  background-color: black;
-}
-
 @media screen and (max-width: 1024px) {
-  /* swiper pagination */
-  .heroSwiper > div:nth-child(4) {
-    margin: 0 150px 80px 150px;
-  }
-
   #partners {
     padding: 0;
-  }
-
-  .partnersItem img {
-    width: 50%;
-    height: auto;
-    padding: 0 0 0 100px;
-  }
-
-  .partnersLabel {
-    padding: 0 100px 0 30px;
   }
 }
 
@@ -188,33 +131,8 @@
     font-size: 25px;
   }
 
-  /* swiper pagination */
-  .heroSwiper > div:nth-child(4) {
-    margin: 0 70px;
-  }
-
-  .heroSwiper > div:nth-child(4) > span {
-    width: 15px;
-    height: 15px;
-    margin-right: 10px !important;
-  }
-
   #info {
     padding: 0 50px;
-  }
-
-  .partnersItem {
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  .partnersItem img {
-    padding: 0;
-  }
-
-  .partnersLabel {
-    padding: 30px 80px;
-    text-align: center;
   }
 
   /* swiper prev, next buttons */
@@ -227,4 +145,146 @@
   .partnersSwiper > div:nth-child(3)::after {
     font-size: 25px;
   }
+}
+
+/* b_part_1_form */
+.section {
+  background-color: #f1f1f1;
+  width: 100%;
+  padding-bottom: 5%;
+}
+.sectionHeader {
+  padding-top: 6%;
+  padding-bottom: 4%;
+  text-align: center;
+}
+.sectionHeader h3 {
+  font-weight: bold;
+}
+.formSection {
+  padding-left: 10%;
+  padding-right: 5%;
+}
+.formSection h5 {
+  font-weight: bold;
+}
+.formGroup {
+  margin-top: 2%;
+}
+.submitButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+.submitButton {
+  font-size: 0.6em;
+  letter-spacing: 0.1em;
+  padding: 2% 4%;
+  margin-top: 5%;
+}
+.fixedSizeTextarea {
+  width: 100%;
+  height: 260px;
+  margin-bottom: 10%;
+}
+
+/* b_part_2_chart */
+.chartSection {
+  margin-top: 2%;
+  text-align: center;
+}
+.chartSection h3 {
+  font-weight: bold;
+}
+.imageContainer {
+  position: relative;
+  width: 100%; /* 부모 요소 너비에 맞게 설정 */
+  max-width: 1000px; /* 최대 너비 설정 (옵셔널) */
+  aspect-ratio: 3 / 2; /* 너비 3, 높이 2 비율 */
+}
+.chartSectionImg {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+.imageButton {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  padding: 1% 8% 1% 8%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+/* b_part_3_testimonials */
+/* 1. Testimonial Section */
+.testimonialSection {
+  padding: 5% 15% 5% 15%;
+
+  background-color: #f1f1f1;
+}
+.testimonialSection h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+/* 2. Slide */
+.slide {
+  padding: 20px;
+  outline: none;
+}
+
+/* 3. Testimonial Card */
+.testimonialCard {
+  border: none;
+  margin: -6%;
+  padding: 3%;
+  background-color: #ffffff;
+  border-radius: 5px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.testimonialCard .card-title {
+  font-size: 1.5rem;
+  color: #555555;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-align: left;
+}
+.testimonialCard .card-text {
+  font-size: 1rem;
+  color: #777777;
+  text-align: left;
+}
+.ratingContainer img {
+  width: 5%;
+  height: 5%;
+  margin-right: 2%;
+}
+
+/* Swiper 화살표 */
+.swiper-button-next,
+.swiper-button-prev {
+  color: white; /* 화살표 아이콘 색상 */
+  width: 30px; /* 화살표 크기 */
+  height: 30px; /* 화살표 크기 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  position: absolute;
+  top: 50%; /* 수직 가운데 정렬 */
+  transform: translateY(-50%); /* 수직 가운데로 정확히 맞춤 */
+  z-index: 10;
+}
+/* 화살표 위치 조정 */
+.swiper-button-next {
+  right: 100%;
+}
+.swiper-button-prev {
+  left: 10px;
 }

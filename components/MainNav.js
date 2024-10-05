@@ -17,7 +17,7 @@ function MainNav() {
                 <Navbar.Toggle aria-controls="navbarScroll" />
                 <Navbar.Collapse id="navbarScroll" style={{ justifyContent: 'end' }}>
                     <Nav className="mr-auto my-2 my-lg-0">
-                        <Nav.Link href="faq-owners">Owners</Nav.Link>
+                        <Nav.Link href="#">Owners</Nav.Link>
                         <Nav.Link href="#">Tenants</Nav.Link>
                         <Nav.Link href="#">Properties</Nav.Link>
                         <Nav.Link href="#">New Development</Nav.Link>
