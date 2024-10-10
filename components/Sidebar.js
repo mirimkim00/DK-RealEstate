@@ -12,19 +12,11 @@ export default function Sidebar({ currentPage }) {
           <>
             <button>
               <FaLongArrowAltRight />
-              &nbsp; FREE ESTIMATE
+              Owners1
             </button>
             <button>
               <FaLongArrowAltRight />
-              &nbsp; NON-RESIDENT TAXES
-            </button>
-            <button>
-              <FaLongArrowAltRight />
-              &nbsp; PLANS
-            </button>
-            <button>
-              <FaLongArrowAltRight />
-              &nbsp; OWNERS PORTAL
+              Owners2
             </button>
           </>
         )}

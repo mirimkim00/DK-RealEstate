@@ -1,13 +1,13 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Image from "react-bootstrap/Image";
-import { useRouter } from "next/router"; // useRouter 임포트
 
 export default function MainNav() {
-  const router = useRouter(); // useRouter 초기화
   const [currentPage, setCurrentPage] = useState("Owners");
+  const router = useRouter(); // useRouter 초기화
   const handleNavClick = (page, path) => {
     setCurrentPage(page);
     router.push(path); // 페이지 이동

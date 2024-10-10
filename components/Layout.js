@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 export default function Layout(props) {
   const router = useRouter();
   const isMainPage = router.pathname === "/";
-  console.log("Current Page in Layout:", props.currentPage); // currentPage 값 확인
+
   return (
     <>
       <title>DK Real Estate Home</title>

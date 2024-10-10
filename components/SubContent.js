@@ -1,5 +1,5 @@
-import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
+import dynamic from "next/dynamic";
 
 export default function SubContent() {
   const router = useRouter();
@@ -8,7 +8,6 @@ export default function SubContent() {
   let DynamicPageComponent;
 
   try {
-    // 페이지에 해당하는 컴포넌트 동적 임포트
     DynamicPageComponent = dynamic(() => import(`../pages/${currentPage}`));
   } catch (error) {
     DynamicPageComponent = () => <div>Page not found</div>;
@@ -16,7 +15,6 @@ export default function SubContent() {
 
   return (
     <div>
-      <h2>{currentPage.charAt(0).toUpperCase() + currentPage.slice(1)} Page</h2>
       <DynamicPageComponent />
     </div>
   );
