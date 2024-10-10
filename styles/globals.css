@@ -113,3 +113,16 @@ a:hover {
 .ownerLoginForm button:hover {
   background-color: #f1f1f1;
 }
+
+/*sidebar*/
+.layoutContainer {
+  display: flex;
+}
+.sidebar {
+  flex: 0 0 250px;
+  margin-right: 20px;
+}
+.subContent {
+  flex: 1;
+  padding: 10px;
+}
