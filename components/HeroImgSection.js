@@ -5,7 +5,7 @@ import styles from "../styles/Owners.module.css";
 export default function HeroSection() {
   return (
     <div className={styles.hero}>
-      <Image src={menuPagePhoto} alt="" />
+      <Image src={menuPagePhoto} />
       <div>
         <h1>Lorem ipsum dolor sit</h1>
       </div>

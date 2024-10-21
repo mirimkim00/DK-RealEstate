@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { FiMail } from "react-icons/fi";
 import { IoIosCall } from "react-icons/io";
 import { FaLongArrowAltRight, FaMapMarkerAlt } from "react-icons/fa";

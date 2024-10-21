@@ -1,21 +1,27 @@
-import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 
-export default function SubContent() {
-  const router = useRouter();
-  const currentPage = router.pathname.replace("/", ""); // 현재 경로에서 페이지 이름 가져오기
+export default function SubContent({ currentPage }) {
+  const [DynamicPageComponent, setDynamicPageComponent] = useState(null);
 
-  let DynamicPageComponent;
+  useEffect(() => {
+    async function loadComponent() {
+      try {
+        const PageComponent = await dynamic(() =>
+          import(`../pages/${currentPage}`)
+        );
+        setDynamicPageComponent(() => PageComponent);
+      } catch (error) {
+        setDynamicPageComponent(() => () => <div>Page not found</div>);
+      }
+    }
 
-  try {
-    DynamicPageComponent = dynamic(() => import(`../pages/${currentPage}`));
-  } catch (error) {
-    DynamicPageComponent = () => <div>Page not found</div>;
-  }
+    loadComponent();
+  }, [currentPage]);
 
   return (
     <div>
-      <DynamicPageComponent />
+      {DynamicPageComponent ? <DynamicPageComponent /> : <div>Loading...</div>}
     </div>
   );
 }
