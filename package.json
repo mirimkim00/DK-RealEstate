@@ -9,9 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "babel-core": "^6.26.3",
     "bootstrap": "^5.3.3",
-    "next": "^14.2.15",
+    "next": "^14.2.16",
     "react": "^18",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18",
@@ -19,7 +18,7 @@
     "swiper": "^11.1.4"
   },
   "devDependencies": {
-    "eslint": "^9.12.0",
+    "eslint": "^8",
     "eslint-config-next": "14.2.3"
   }
 }
