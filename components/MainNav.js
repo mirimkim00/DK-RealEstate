@@ -17,12 +17,14 @@ function MainNav() {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll" style={{ justifyContent: "end" }}>
           <Nav className="mr-auto my-2 my-lg-0">
-            <Nav.Link href="/owners/faq-owners">Owners</Nav.Link>
-            <Nav.Link href="#">Tenants</Nav.Link>
-            <Nav.Link href="#">Properties</Nav.Link>
-            <Nav.Link href="#">New Development</Nav.Link>
+            <Nav.Link href="/owners/faq">Owners</Nav.Link>
+            <Nav.Link href="/tenants/search-property">Tenants</Nav.Link>
+            <Nav.Link href="/properties/search-property">Properties</Nav.Link>
+            <Nav.Link href="/new-development/guarantee-program">
+              New Development
+            </Nav.Link>
             <Nav.Link href="#">Plans</Nav.Link>
-            <Nav.Link href="#">Contact</Nav.Link>
+            <Nav.Link href="/contact/contact">Contact</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
