@@ -1,66 +1,18 @@
-// import { FiMail } from "react-icons/fi";
-// import { IoIosCall } from "react-icons/io";
-// import { FaLongArrowAltRight, FaMapMarkerAlt } from "react-icons/fa";
-import styles from "../styles/Owners.module.css";
-import Accordion from "react-bootstrap/Accordion";
-import Sidebar from "../components/SideBar";
-import SubepageHero from "../components/SubpageHero";
-// import menuPagePhoto from "../src/images/1.jpg";
-// import Image from "next/image";
 import { Col, Row } from "react-bootstrap";
+import Accordion from "react-bootstrap/Accordion";
+import styles from "../../styles/Owners.module.css";
+import Sidebar from "../../components/SideBar";
+import SubepageHero from "../../components/SubpageHero";
 
 export default function FaqOwners() {
   return (
     <>
       <SubepageHero />
-      <Sidebar />
-      <main id={styles.faqOwners}>
-        {/* <div className={styles.hero}>
-        <Image src={menuPagePhoto} alt="" />
-        <div>
-          <h1>Frequently Asked Questions</h1>
-        </div>
-      </div> */}
-
+      <main>
         <section className={styles.faqSection}>
           <Row className={styles.faqMain}>
-            <Col lg="3" xl={3}>
-              {/*  <div className={styles.sidebar}>
-              <button>
-                <FaLongArrowAltRight />
-                &nbsp; FREE ESTIMATE
-              </button>
-              <button>
-                <FaLongArrowAltRight />
-                &nbsp; NON-RESIDENT TAXES
-              </button>
-              <button>
-                <FaLongArrowAltRight />
-                &nbsp; PLANS
-              </button>
-              <button>
-                <FaLongArrowAltRight />
-                &nbsp; OWNERS PORTAL
-              </button>
-            </div>
-
-            <div className={styles.contactInfo}>
-              <div>
-                <IoIosCall />
-                <p>
-                  Local: 123-456-7890 <br />
-                  Toll Free: 1-123-456-7890
-                </p>
-              </div>
-              <div>
-                <FiMail />
-                <p>DK@dk.ca</p>
-              </div>
-              <div>
-                <FaMapMarkerAlt />
-                <p>123 Yonge St, Toronto Ontario, M1M 1M1</p>
-              </div>
-            </div>*/}
+            <Col lg="3" xl="3">
+              <Sidebar />
             </Col>
             <Col>
               <div className={styles.faq}>

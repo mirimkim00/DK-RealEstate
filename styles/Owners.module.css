@@ -27,7 +27,7 @@
 
 /* FAQ - sidebar */
 .sidebar {
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .sidebar button {
@@ -55,21 +55,23 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 22px;
 }
 
 .contactInfo svg {
   font-size: 20px;
+  color: orange;
 }
 
 .contactInfo p {
   margin: 0;
   padding-left: 10px;
+  font-size: 15px;
 }
 
 /* FAQ - faq */
 .faq {
-  border-bottom: 1px solid #000;
+  /* border-bottom: 1px solid #000; */
   margin-bottom: 30px;
 }
 
